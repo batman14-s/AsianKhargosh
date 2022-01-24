@@ -4,8 +4,8 @@ import numpy as np
 import cv2
 
 url = "https://192.168.1.6:8080/video"
-cv2.namedWindow('Phone Video', cv2.WINDOW_NORMAL)
-phonecap = cv2.VideoCapture(url)
+# cv2.namedWindow('Phone Video', cv2.WINDOW_NORMAL)
+# phonecap = cv2.VideoCapture(url)
 
 cap=cv2.VideoCapture(0)
 cap.set(3, 640)
@@ -39,7 +39,7 @@ red = (50, 50, 255)
 
 while True:
     sucess, imgOrignal=cap.read()
-    camera, phoneframe = phonecap.read()
+    # camera, phoneframe = phonecap.read()
 
     crop_img=imgOrignal[y:y+h, x:x+h]
     img=cv2.resize(crop_img, (64,64))
@@ -63,7 +63,7 @@ while True:
     
     cv2.imshow("Result",imgOrignal)
     # cv2.imshow("Cropped image", crop_img)
-    cv2.imshow("Phone Video", phoneframe)   
+    # cv2.imshow("Phone Video", phoneframe)   
     cv2.resizeWindow('Phone Video', 740,480) 
     k=cv2.waitKey(1)
     if k==ord('q'):
